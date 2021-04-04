@@ -1,4 +1,4 @@
-# ba_1.6
+# Ballistica Linux 1.6 Server build
 A working Linux Ubuntu v20 server build for BombSquad/Ballistica 1.6
 
 # Setting Up Environment
