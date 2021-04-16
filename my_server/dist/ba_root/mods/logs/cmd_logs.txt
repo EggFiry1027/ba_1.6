@@ -1,0 +1,2 @@
+This is the Start of the Logs
+Logs will be in descending order (means the last used cmd will be in 1st line)
