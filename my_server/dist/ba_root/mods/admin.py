@@ -46,6 +46,7 @@ class PermissionEffect(object):
 
 class showHitPoint(object):
     def __init__(self,position = (0,1.5,0),owner = None,prefix = 'ADMIN',shad = 1.2):
+        if not (mysettings.settings['showHP']): return
         self.position = position
         self.owner = owner
         m = ba.newnode('math', owner=self.owner, attrs={'input1': self.position, 'operation': 'add'})
@@ -188,7 +189,7 @@ class Enhancement(ba.Actor):
             if client.node.playerID == node_id:
                 def showHP():
                     if spaz.node.exists(): showHitPoint(owner=spaz.node,prefix=str(int(spaz.hitpoints)),position=(0,0.75,0),shad = 1.4)
-                if (mysettings.settings['showHP']) and (str(_ba.get_foreground_host_activity().getname()) != 'Super Smash'):
+                if (str(_ba.get_foreground_host_activity().getname()) != 'Super Smash'):
                     self.hptimer = ba.Timer(10,ba.Call(showHP),repeat = True, timetype=tt, timeformat=tf)
         if profiles == []: profiles = []
         if profiles == {}: profiles = {}
@@ -991,6 +992,7 @@ class ModifiedPlayerSpaz(Spaz):
                     elif damage >= 400 and damage < 600: PopupText("OH! YEAH",color=(1,0.5,0.2),scale=1.6,position=self.node.position).autoretain()
                     elif damage >= 200 and damage < 400: PopupText("WTF!",color=(0.7,0.4,0.2),scale=1.6,position=self.node.position).autoretain()
                     elif damage > 0 and damage < 200: PopupText("!!!",color=(1,1,1),scale=1.6,position=self.node.position).autoretain()
+                    else: eeee = 1 #just nothing
                 if self.hitpoints <= 0: PopupText("Rest In Peace !",color=(1,0.2,0.2),scale=1.6,position=self.node.position).autoretain()
 
                 # If damage was significant, lets show it.
