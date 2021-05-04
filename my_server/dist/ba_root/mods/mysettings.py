@@ -217,7 +217,7 @@ class RejoinCoolDownManager(object):
             if (c_id != -1) and (name not in self.whiteList) and (uID in self.CD):
                 if time < self.CD[uID]:
                     bal = int(self.CD[uID] - time)
-                    if announce_cooldown: _ba.chatmessage(f"{str(name)} has now a cooldown of {str(bal)} secs to rejoin...")
+                    if announce_cooldown: _ba.chatmessage(f"{str(name)} has now a cooldown of {str(bal)[:2]}.{str(bal)[2:]} secs to rejoin...")
                     _ba.disconnect_client(c_id, bal)
         #Compare last players list with current
         for uID, n in self.old.items():
