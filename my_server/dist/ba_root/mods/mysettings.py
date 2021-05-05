@@ -218,7 +218,7 @@ class RejoinCoolDownManager(object):
                 if time < self.CD[uID]:
                     bal = int(self.CD[uID] - time)
                     if announce_cooldown: _ba.chatmessage(f"{str(name)} has now a cooldown of {str(bal)[:-4]}.{str(bal)[-3:]} secs to rejoin...")
-                    _ba.disconnect_client(c_id, bal)
+                    _ba.disconnect_client(c_id, (bal/1000))
         #Compare last players list with current
         for uID, n in self.old.items():
             #If a client's display string is missing in new roster, he/she had left
