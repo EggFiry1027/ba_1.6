@@ -108,8 +108,8 @@ def filterChatMessage(msg: str, clientID: int):
 
             #Cool Down for chatting, no chance for spamming
             if (uID not in whiteListedPeeps) and (uID in chatCoolDown) and (time < chatCoolDown[uID]):
-                bal = int(chatCoolDown[uID] - time) / 100
-                sendError(f"Too Fast, you have {str(bal)[0]}.{str(bal)[1]} second(s) cool down...",clientID)
+                bal = int(chatCoolDown[uID] - time) /1000
+                sendError(f"Too Fast, you have {str(bal)} second(s) cool down...",clientID)
                 ret = None
             chatCoolDown[uID] = time + chatCoolDownTime
     return ret

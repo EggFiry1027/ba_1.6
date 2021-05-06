@@ -80,13 +80,8 @@ def getNamesFromLog(ID: str):
     else: ba.screenmessage(f"Player not found in logs")
 
 def getStats():
-    try:
-        f = open(statsFile, 'r')
-        return json.loads(f.read())
-        f.close()
-    except:
-        sendError("Stats not found")
-        return {}
+    f = open(statsFile, 'r')
+    return json.loads(f.read())
 
 def printStatsByID(ID: str):
     stat = getStats()
@@ -216,7 +211,7 @@ class RejoinCoolDownManager(object):
             #Check if player has CD
             if (c_id != -1) and (name not in self.whiteList) and (uID in self.CD):
                 if time < self.CD[uID]:
-                    bal = int(self.CD[uID] - time)
+                    bal = int(self.CD[uID] - time) /1000
                     if announce_cooldown: _ba.chatmessage(f"{str(name)} has now a cooldown of {str(bal)} secs to rejoin...")
                     _ba.disconnect_client(c_id, bal)
         #Compare last players list with current
