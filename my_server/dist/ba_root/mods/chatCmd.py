@@ -685,7 +685,7 @@ class chatOptions(object):
                         for i in ros:
                             if (i is not None) and (i != {}) and (i['client_id'] == clID):
                                 name = i['players'][0]['name']
-                                newID = i['account_id']
+                                new = i['account_id']
                                 a[2] = a[2].replace('_',' ')
                                 commandSuccess = False
                                 if a[1] == 'add':
