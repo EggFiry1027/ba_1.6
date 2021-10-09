@@ -716,7 +716,7 @@ class chatOptions(object):
                                         commandSuccess=True
                                 def save_data():
                                     m = open(membersFile, 'r')
-                                    d = json.loads(m)
+                                    d = json.loads(m.read())
                                     if string == 'customTag': d['customTag'] = roles.customTag
                                     if string == 'customList': d['customList'] = roles.customList
                                     m2 = open(membersFile, 'w')
