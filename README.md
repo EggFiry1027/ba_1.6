@@ -1,5 +1,5 @@
 # Ballistica Linux 1.6 Server build
-A working Linux Ubuntu v20 server build for BombSquad/Ballistica 1.6
+A TESTING Linux Ubuntu v20 server build for BombSquad/Ballistica 1.6
 ***
 # SERVER SETUP INSTRUCTIONS
 Follow the below steps after creating an EC2 Linux v20 AWS instance:
