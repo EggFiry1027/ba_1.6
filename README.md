@@ -34,7 +34,7 @@ Follow the below steps after creating an EC2 Linux v20 AWS instance:
 ***
 # Feedback and Support
 Contact me through Discord for all feedbacks, complaints/errors, suggestions, etc,
-my discord id = `Eggu#6389` , `FireFighter1027#3441`
+my discord id = `Eggu#8886` , `FireFighter1027#3441`
 ***
 # Enjoy !
 Happy Modding/Playing !
